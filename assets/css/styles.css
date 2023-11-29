@@ -1,5 +1,7 @@
 /*==================== GOOGLE FONTS ====================*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
 
 /*==================== VARIABLES CSS ====================*/
 :root {
@@ -144,6 +146,10 @@ img {
   font-size: var(--h1-font-size);
   color: var(--title-color);
 }
+.section__title1 {
+  font-size: var(--h1-font-size);
+  color: var(--title-color);
+}
 
 .book__subtitle{
   display: block;
@@ -155,10 +161,16 @@ img {
   font-size: var(--small-font-size);
   margin-bottom: var(--mb-3);
 }
+.section__subtitle2 {
+  display: block;
+  font-size: var(--small-font-size);
+}
+.section__title1,
 .book__subtitle,
 .book__description,
 .section__title, 
-.section__subtitle {
+.section__subtitle,
+.section__subtitle2 {
   text-align: center;
 }
 
@@ -568,16 +580,16 @@ overflow: hidden;
   margin-bottom: var(--mb-2);
 }
 .contact__icon{
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--first-color);
   margin-right: var(--mb-0-75);
 }
 .contact__title{
-  font-size: var(--h3-font-size);
+  font-size: 1.1rem;
   font-weight: var(--font-medium);
 }
 .contact__subtitle{
-  font-size: var(--small-font-size);
+  font-size: 0.825rem;
   color: var(--text-color-light);
 }
 .contact__content{
@@ -601,31 +613,7 @@ overflow: hidden;
 
 }
 /*==================== FOOTER ====================*/
-.footer{
-  padding-top: 2rem;
-}
-.footer__container{
-  row-gap: 3.5rem;
-}
-.footer__bg{
-  background-color: var(--first-color-second);
-  padding: 2rem 0 3rem;
-}
-.footer__title{
-  font-size: var(--h1-font-size);
-  margin-bottom: var(--mb-0-25);
-}
-.footer__subtitle{
-  font-size: var(--small-font-size);
-}
-.footer__links{
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.5rem;
-}
-.footer__link:hover{
-  color: var(--first-color-lighter);
-}
+
 .footer__socials{
   font-size: 1.25rem;
   margin-right: var(--mb-1-5);
@@ -633,11 +621,41 @@ overflow: hidden;
 .footer__social:hover{
   color: var(--first-color-lighter);
 }
-.footer__copy{
-  font-size: var(--smaller-font-size);
+#footer {
+  background: var(--first-color-second);
+}
+
+
+#footer .container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  min-height: 160px;
   text-align: center;
-  color: var(--text-color-light);
-  margin-top: var(--mb-3);
+}
+
+#footer a {
+  font-size: 1rem;
+  color: #fff;
+}
+
+#footer a:hover {
+  color: #ffcd42;
+}
+
+#footer .social {
+  margin: 0.9rem 0;
+}
+
+
+#footer .social a {
+  margin: 0 0.5rem;
+}
+
+#footer p {
+  font-size: 0.8rem;
 }
 
 .footer__title,
@@ -658,6 +676,30 @@ overflow: hidden;
   z-index: var(--z-tooltip);
   transition: .4s;
 }
+#playPauseBTN {
+  position: fixed;
+  left: 2rem;
+  bottom: 4.5rem;
+  z-index: var(--z-tooltip);
+  border-radius: 50%;
+  width: 3rem; /* Adjust size as needed */
+  height: 3rem; /* Adjust size as needed */
+  background-color: black;
+  color: white;
+  text-align: center;
+  line-height: 3rem; /* Match the height for vertical alignment */
+  cursor: pointer;
+}
+
+#playPauseBTN:hover {
+  background-color: #333; /* Darken background on hover */
+}
+
+/* Optional: Add some spacing to the button text */
+.audio button::after {
+  content: "\00a0"; /* Non-breaking space */
+}
+
 .scrollup:hover{
   background-color: var(--first-color-alt);
 }
@@ -670,6 +712,8 @@ overflow: hidden;
 .show-scroll{
   bottom: 5rem;
 }
+
+
 
 
 /*========== SCROLL BAR ==========*/
@@ -685,6 +729,182 @@ border-radius: .5rem;
 ::-webkit-scrollbar-thumb:hover{
   background-color: var(--text-color-light);
 }
+
+/*==================== what i changed for the portfolio page ====================*/
+
+
+.container2 {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+/* Project cards */
+.card {
+  padding: 1rem;
+  background: #111111;
+  color: #ffffff;
+  border-radius: 5px;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.card a {
+  color: #ffffff;
+  transition: 0.25s ease-in-out;
+  font-size: 1.1rem;
+  margin-right: 0.3rem;
+}
+
+.card a:hover {
+  color: #ffcd42;
+}
+
+.card:hover {
+  box-shadow: inset 0 100px 1000px 10px rgba(0, 0, 0, 0.8);
+}
+
+.card:hover .project-info {
+  opacity: 1;
+}
+
+/* Project Images */
+
+/* project 1 */
+.card:nth-child(1) {
+  background: url(../img/003.png) center center/cover;
+}
+
+/* Project 2 */
+.card:nth-child(2) {
+  background: url(../img/002.png) center center/cover;
+}
+
+/* Project 3 */
+.card:nth-child(3) {
+  background: url(../img/001.png) center center/cover;
+}
+.dark-theme .card:nth-child(3) {
+  background: url(../img/00.png) center center/cover; /* Replace with your dark theme image */
+}
+
+#projects {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto 1rem;
+}
+
+.project {
+  display: grid;
+  grid-auto-rows: minmax(250px, auto);
+  grid-gap: 0.9rem;
+}
+.project2 {
+  
+  display: grid;
+  grid-auto-rows: minmax(250px, auto);
+  grid-template-columns: repeat(3,1fr);
+  max-height: 200px;
+
+}
+.project2 > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .project-bio p {
+  font-size: 1rem;
+  color: white;
+}
+
+.card .project-bio h3 {
+  font-size: 1.2rem;
+  color: #ffbb00;
+}
+
+.project-info {
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;
+  position: relative;
+  transition: 0.5s ease-in-out;
+}
+
+.project-bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  top: 160px;
+  left: 10px;
+}
+.header-container > div {
+  margin-top: 1rem;
+}
+
+.content-text {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.content-text h2 {
+  font-size: 3rem;
+  line-height: 1.2;
+  transition: 0.2s ease-in-out;
+}
+
+.content-text p {
+  padding: 0.5rem;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+
+.container1{
+  display: grid;
+}
+.column1 {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.image {
+  width: 100%;
+  height: 100%; /* Set a fixed height */
+  object-fit: cover; /* Maintain the aspect ratio and cover the container */
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*==================== MEDIA QUERIES ====================*/
 /* For small devices */
 @media screen and (max-width: 350px) {
@@ -707,6 +927,16 @@ border-radius: .5rem;
   .skills__title{
     font-size: var(--normal-font-size);
   }
+  .container1,
+  .project {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+
 }
 
 /* For medium devices */
@@ -822,6 +1052,12 @@ border-radius: .5rem;
   .footer__socials{
     justify-self: flex-end;
   }
+  .container1,
+  .project {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+
 
 
 }
@@ -861,31 +1097,30 @@ border-radius: .5rem;
   .contact__inputs{
     grid-template-columns: repeat(2,1fr);
   }
+/*==================== what i changed for the design page ====================*/
+
+.section__title1{
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+.project {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: 150px;
+  margin-right: 150px;
+}
+.container1{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 100px;
+}
+
 
 }
 
-#expand-image {
-  max-width: 100%;
-  transition: transform 0.3s ease-in-out;
-}
 
-#expand-image.expanded {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  z-index: 999;
-}
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9); /* Adjust opacity (0.5 for 50% darkness) */
-  z-index: 998; /* Place it below the image */
-  display: none; /* Initially hidden */
-}
+/*==================== what i changed for the design page ====================*/
+
+
+

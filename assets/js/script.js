@@ -1,18 +1,15 @@
-const images = document.querySelectorAll('#expand-image');
-const overlay = document.getElementById('overlay');
+var audio = document.getElementById('audio');
+var playPauseBTN = document.getElementById('playPauseBTN');
+var count = 0;
 
-images.forEach((image) => {
-    image.addEventListener('click', () => {
-        if (image.classList.contains('expanded')) {
-            // If the image is expanded, remove the 'expanded' class to shrink it
-            image.classList.remove('expanded');
-            overlay.style.display = 'none'; // Hide the overlay
-        } else {
-            // If the image is not expanded, add the 'expanded' class to expand it
-            image.classList.add('expanded');
-            overlay.style.display = 'block'; // Show the overlay
-        }
-    });
-});
-
-
+function playPause() {
+    if (count == 0) {
+        count = 1;
+        audio.play();
+        playPauseBTN.innerHTML = '<i class="uil uil-pause"></i>'; // Replace with the appropriate class for volume off icon
+    } else {
+        count = 0;
+        audio.pause();
+        playPauseBTN.innerHTML = '<i class="uil uil-play"></i>'; // Replace with the appropriate class for volume icon
+    }
+}
